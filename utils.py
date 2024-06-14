@@ -10,6 +10,8 @@ from loguru import logger
 
 DEBUG = int(os.environ.get("DEBUG", "0"))
 
+openai_api_key = "EMPTY"
+
 
 def generate_together(
     model,
@@ -82,7 +84,7 @@ def generate_together_stream(
 ):
     endpoint = "https://api.together.xyz/v1"
     client = openai.OpenAI(
-        api_key=os.environ.get("TOGETHER_API_KEY"), base_url=endpoint
+        api_key=openai_api_key
     )
     endpoint = "https://api.together.xyz/v1/chat/completions"
     response = client.chat.completions.create(
@@ -104,7 +106,7 @@ def generate_openai(
 ):
 
     client = openai.OpenAI(
-        api_key=os.environ.get("OPENAI_API_KEY"),
+        api_key=openai_api_key,
     )
 
     for sleep_time in [1, 2, 4, 8, 16, 32]:
