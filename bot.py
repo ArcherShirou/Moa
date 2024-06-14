@@ -32,10 +32,9 @@ This demo uses the following LLMs as reference models, then passes the results t
 """
 
 default_reference_models = [
-    "Qwen/Qwen2-72B-Instruct",
-    "Qwen/Qwen1.5-72B-Chat",
-    "mistralai/Mixtral-8x22B-Instruct-v0.1",
-    "databricks/dbrx-instruct",
+    "/mnt/data/open_models/modelscope/hub/qwen2/Qwen2-72B-Instruct",
+    "/mnt/data/open_models/modelscope/hub/qwen-1.5/qwen/Qwen1.5-72B-Chat",
+    "/mnt/data/open_models/modelscope/hub/Llama/llama3/Meta-Llama-3-70B-Instruct",
 ]
 
 
