@@ -168,5 +168,21 @@ def main(
             )
 
 
+def main_wrapper():
+    args = config.parse_args()
+
+    # 将解析到的参数传递给 main 函数
+    main(
+        model=args.model,
+        reference_models=args.reference_models,
+        temperature=args.temperature,
+        max_tokens=args.max_tokens,
+        rounds=args.rounds,
+        multi_turn=args.multi_turn
+    )
+
+
 if __name__ == "__main__":
-    typer.run(main)
+    main_wrapper()
+
+
